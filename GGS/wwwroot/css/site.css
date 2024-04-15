@@ -1,0 +1,50 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.hero-image {
+    /* Cambia 'path_to_your_background_image.jpg' al path real de tu imagen */
+    background: url('/img/fondoperron.png') center center no-repeat;
+    background-size: cover;
+    height: 100vh; /* 100% de la altura de la ventana gráfica */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Color de texto */
+}
+
+/* Clase para la barra de búsqueda para que se destaque sobre el fondo */
+.search-bar {
+    width: 50%; /* O el ancho que prefieras */
+    margin-top: 20px; /* Espacio por encima de la barra de búsqueda */
+}
+
+.search-bar {
+    width: 50%; /* O el ancho que prefieras */
+    margin-top: 20px; /* Espacio por encima de la barra de búsqueda */
+}
+
+.card-img-top {
+    height: 225px; /* Fija la altura de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área asignada sin distorsionarse */
+}
