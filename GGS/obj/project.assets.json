@@ -46,6 +46,31 @@
           }
         }
       },
+      "DisposableObject/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/DisposableObject.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/DisposableObject.dll": {}
+        }
+      },
+      "EDF-CSharp/0.6.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/EDFCSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/EDFCSharp.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/net6.0/EDFCSharp.ico": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -903,6 +928,60 @@
           }
         }
       },
+      "SharpEDFlib/1.26.0": {
+        "type": "package",
+        "dependencies": {
+          "DisposableObject": "1.0.0"
+        },
+        "compile": {
+          "lib/net7.0/SharpEDFlib.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/SharpEDFlib.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libEDFlib.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libEDFlib.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libEDFlib.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libEDFlib.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libEDFlib.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm/native/EDFlib.dll": {
+            "assetType": "native",
+            "rid": "win-arm"
+          },
+          "runtimes/win-arm64/native/EDFlib.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/EDFlib.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/EDFlib.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
@@ -1559,6 +1638,51 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "DisposableObject/1.0.0": {
+      "sha512": "NlMBLlrVlgObi5rlvC6ah64boZITYwK7uWpESPp1E/FKS19tpE24Q3A94CbJxMgT0P0fgsk554IlhdYhyktoVA==",
+      "type": "package",
+      "path": "disposableobject/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "disposableobject.1.0.0.nupkg.sha512",
+        "disposableobject.nuspec",
+        "lib/net35/DisposableObject.dll",
+        "lib/net6.0/DisposableObject.dll",
+        "lib/netcoreapp3.1/DisposableObject.dll"
+      ]
+    },
+    "EDF-CSharp/0.6.2": {
+      "sha512": "T7gNeLukyQSaTtQG0tvYINvu1kKcz236GxIXOufN/3BzmHahQ/zMWlDOK9/AZvvknfXo+cxOyarw1U5uoftpfw==",
+      "type": "package",
+      "path": "edf-csharp/0.6.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EDFCSharp.png",
+        "README.md",
+        "content/EDFCSharp.ico",
+        "contentFiles/any/net46/EDFCSharp.ico",
+        "contentFiles/any/net461/EDFCSharp.ico",
+        "contentFiles/any/net471/EDFCSharp.ico",
+        "contentFiles/any/net472/EDFCSharp.ico",
+        "contentFiles/any/net48/EDFCSharp.ico",
+        "contentFiles/any/net5.0/EDFCSharp.ico",
+        "contentFiles/any/net6.0/EDFCSharp.ico",
+        "contentFiles/any/netcoreapp3.1/EDFCSharp.ico",
+        "edf-csharp.0.6.2.nupkg.sha512",
+        "edf-csharp.nuspec",
+        "lib/net46/EDFCSharp.dll",
+        "lib/net461/EDFCSharp.dll",
+        "lib/net471/EDFCSharp.dll",
+        "lib/net472/EDFCSharp.dll",
+        "lib/net48/EDFCSharp.dll",
+        "lib/net5.0/EDFCSharp.dll",
+        "lib/net6.0/EDFCSharp.dll",
+        "lib/netcoreapp3.1/EDFCSharp.dll"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -2967,6 +3091,37 @@
         "packageIcon.png"
       ]
     },
+    "SharpEDFlib/1.26.0": {
+      "sha512": "yUm6gKRbxSiCsi6dJFhKEbu+EUBdsqcBCp+RxQO7hI4/1FrJO5rvSqXGbpP2Pcf6SLn5SHkOiwgSQl1qDui9ZA==",
+      "type": "package",
+      "path": "sharpedflib/1.26.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/net35/SharpEDFlib.targets",
+        "buildTransitive/net35/SharpEDFlib.targets",
+        "lib/net35/SharpEDFlib.dll",
+        "lib/net35/SharpEDFlib.xml",
+        "lib/net6.0/SharpEDFlib.dll",
+        "lib/net6.0/SharpEDFlib.xml",
+        "lib/net7.0/SharpEDFlib.dll",
+        "lib/net7.0/SharpEDFlib.xml",
+        "lib/netcoreapp3.1/SharpEDFlib.dll",
+        "lib/netcoreapp3.1/SharpEDFlib.xml",
+        "runtimes/linux-arm/native/libEDFlib.so",
+        "runtimes/linux-arm64/native/libEDFlib.so",
+        "runtimes/linux-x64/native/libEDFlib.so",
+        "runtimes/osx-arm64/native/libEDFlib.dylib",
+        "runtimes/osx-x64/native/libEDFlib.dylib",
+        "runtimes/win-arm/native/EDFlib.dll",
+        "runtimes/win-arm64/native/EDFlib.dll",
+        "runtimes/win-x64/native/EDFlib.dll",
+        "runtimes/win-x86/native/EDFlib.dll",
+        "sharpedflib.1.26.0.nupkg.sha512",
+        "sharpedflib.nuspec"
+      ]
+    },
     "System.CodeDom/4.4.0": {
       "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
       "type": "package",
@@ -4143,10 +4298,12 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "EDF-CSharp >= 0.6.2",
       "Microsoft.EntityFrameworkCore >= 8.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.4",
-      "Newtonsoft.Json >= 13.0.3"
+      "Newtonsoft.Json >= 13.0.3",
+      "SharpEDFlib >= 1.26.0"
     ]
   },
   "packageFolders": {
@@ -4193,6 +4350,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "EDF-CSharp": {
+            "target": "Package",
+            "version": "[0.6.2, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.4, )"
@@ -4210,6 +4371,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "SharpEDFlib": {
+            "target": "Package",
+            "version": "[1.26.0, )"
           }
         },
         "imports": [

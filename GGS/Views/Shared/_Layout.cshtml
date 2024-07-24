@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
 
-    <link rel="stylesheet" href="~/SereneEscapes.styles.css" asp-append-version="true" />
 </head>
 <body class="bg-dark text-white">
     <header>
@@ -32,33 +31,12 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Juegos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Listas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Noticias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Comunidad</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tienda</a>
-                        </li>
                     </ul>
 
                     <!-- Iconos de usuario y carrito a la derecha -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-user-circle"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -75,14 +53,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-3 mb-md-0">
-                    <h5>GAMER GEAR  SYSTEM</h5>
-                    <p>Descubre la plataforma líder en digital para los aficionados a los videojuegos, ofreciendo un espacio integral para gestionar y explorar tus listas de juegos pendientes.</p>
-                    <form>
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Suscríbete</button>
-                        </div>
-                    </form>
+                    <h5>EEG Analizer</h5>
+                    <p>Una plataforma que permite monitorear los resultados de actividad cerebral mediante resultados de encefalogramas.</p>
                 </div>
                 <div class="col-md-2">
                     <h5>ACERCA</h5>
@@ -91,18 +63,10 @@
                     </ul>
                 </div>
                 <div class="col-md-2">
-                    <h5>JUEGOS</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Requerimientos</a></li>
-                        <li><a href="#" class="text-light">Noticias</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
                     <h5>COMUNIDAD</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Listas</a></li>
-                        <li><a href="#" class="text-light">Rating</a></li>
-                        <li><a href="#" class="text-light">Juegos</a></li>
+                        <li><a href="#" class="text-light">Articulos</a></li>
+                        <li><a href="#" class="text-light">Referencias</a></li>
                     </ul>
                 </div>
             </div>
@@ -112,6 +76,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/block-ui/block-ui.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 
     <script src="~/js/controller.js" type="module"></script>
     @await RenderSectionAsync("Scripts", required: false)

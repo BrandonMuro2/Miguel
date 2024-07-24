@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
-namespace WebApp.Models
+namespace GGS.Models
 {
     public class Result
     {

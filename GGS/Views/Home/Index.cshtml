@@ -4,179 +4,93 @@
         ViewData["Title"] = "Home Page";
     }
 <style>
-
-    body {
-        font-family: 'Sans-Serif', Arial, sans-serif !important;
+    #channelList {
+        overflow-y: scroll;
+        max-height: 80vh; /* 80% de la altura de la pantalla */
     }
 
-    .card-container .card {
-        margin: 10px; /* Añade un margen alrededor de los cards */
-        height: 200px; /* Ajusta esto para cambiar la altura */
+        #channelList::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        #channelList::-webkit-scrollbar-track {
+            background: #1f1f1f;
+        }
+
+        #channelList::-webkit-scrollbar-thumb {
+            background-color: #444; /* color de la barra de desplazamiento */
+            border-radius: 20px;
+            border: 3px solid #1f1f1f;
+        }
+
+            #channelList::-webkit-scrollbar-thumb:hover {
+                background-color: #555;
+            }
+
+    .list-group-item.active {
+        z-index: 2;
+        /* color: #fff; */
+        background-color: #DA70D6 !important;
     }
-
-    .carousel-item .d-flex {
-        justify-content: space-around; /* Espacia los cards uniformemente */
-    }
-
-    .card-hover-info {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.85);
-        color: white;
-        overflow: hidden;
-        height: 0;
-        transition: height 0.5s ease;
-    }
-
-    .card:hover .card-hover-info {
-        height: 100%; /* Ajusta esto según el tamaño de la tarjeta */
-        padding: 10px; /* Espacio para el texto */
-    }
-
-    .card-img-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .card {
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Estilos para los botones de control */
-    .carousel-control-prev, .carousel-control-next {
-        width: 50px; /* Ajusta el ancho según tus botones */
-        height: 500px; /* Ajusta la altura según tus botones */
-    }
-
-    .carousel-control-prev {
-        left: -60px; /* Ajusta para mover los botones más a la izquierda del carrusel */
-    }
-
-    .carousel-control-next {
-        right: -60px; /* Ajusta para mover los botones más a la derecha del carrusel */
-    }
-
-    /* Ajustes adicionales para posicionar correctamente los iconos dentro de los botones */
-    .carousel-control-prev-icon, .carousel-control-next-icon {
-        width: 100%;
-        height: 100%;
-        background-size: contain;
-    }
-
-    .card-img-top {
-        height: 500px; /* Ajusta este valor según necesites */
-        object-fit: cover; /* Mantiene las proporciones de la imagen */
-    }
-
-    .card-body .d-flex {
-        width: 100%; /* Asegura que el contenedor flex ocupe todo el ancho disponible */
-    }
-
-    .card-title {
-        margin-bottom: 0; /* Elimina el margen inferior para alinear correctamente con los íconos */
-    }
-
-    .fas, .fab {
-        font-size: 1.25rem; /* Tamaño de los íconos */
-    }
-
-
 </style>
 
 
 
-<div class="hero-image">
-    <h1 class="mb-4 display-1">¡Organiza tu aventura, planifica tu juego!</h1>
-    <div class="search-bar d-flex align-items-center">
-        <input class="form-control form-control-lg" type="text" placeholder="Buscar juegos, noticias, más...">
-        <button class="btn btn-primary btn-lg" type="submit">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
-</div>
 
-<div class="container mt-5">
-    <h2 class="mb-4">Los más jugados</h2>
-    <div id="gameCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Aquí se insertarán los elementos del carrusel -->
+<div class="container-fluid">
+
+    <div class="card bg-dark text-light mb-3">
+        <div class="card-header" data-bs-toggle="collapse" data-bs-target="#collapseCard" aria-expanded="false" aria-controls="collapseCard" style="cursor: pointer;">
+            <h5 class="mb-0">Upload EDF File</h5>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#gameCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
+        <div id="collapseCard" class="collapse">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="mb-3">
+                            <label for="fileBackground" class="form-label">Select EDF file for background (Format example: Subject35_1.edf):</label>
+                            <input type="file" id="fileBackground" name="fileBackground" class="form-control bg-dark text-light border-secondary" accept=".edf">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="mb-3">
+                            <label for="fileTask" class="form-label">Select EDF file for task (Format example: Subject35_2.edf):</label>
+                            <input type="file" id="fileTask" name="fileTask" class="form-control bg-dark text-light border-secondary" accept=".edf">
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button id="uploadButton" class="btn my-auto btn-primary w-100">Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<div class="container mt-5">
-    <h2 class="mb-4">Comentarios de juegos</h2>
+
     <div class="row">
-        <!-- Tarjeta grande a la izquierda -->
+        <div class="col-md-2">
+            <div class="form-group">
+                <div class="d-flex">
+                    <select id="subjectSelect" class="form-select bg-dark text-light border-secondary mr-2"></select>
+                    <div id="subjectInfo" class="d-flex flex-column">
+                        <input id="subjectAge" type="text" class="form-control bg-dark text-light border-secondary mb-1" placeholder="Age" readonly>
+                        <input id="subjectGender" type="text" class="form-control bg-dark text-light border-secondary" placeholder="Gender" readonly>
+                    </div>
+                </div>
+            </div>
+            <ul id="channelList" class="list-group mt-3"></ul>
+        </div>
+        <div class="col-md-2">
+            <div id="zoneName" class="text-center mb-2"></div>
+            <div id="zoneInfo" class="text-center"></div>
+            <div id="eegPlotZoneSummary" style="width:100%;height:30%;" class="mt-3"></div>
+            <div id="channelName" class="text-center mb-2 mt-3"></div>
+            <div id="activityInfo" class="text-center"></div>
+            <div id="eegPlotChannelSummary" style="width:100%;height:30%;" class="mt-3"></div>
+        </div>
         <div class="col-md-8">
-            <div class="card mb-3 bg-dark text-white">
-                <img src="https://itigic.com/wp-content/uploads/2020/03/cod-warzone.jpg" class="card-img-top" alt="Warzone">
-                <div class="card-body">
-                    <h5 class="card-title">Warzone: redefine la experiencia de battle royale con acción intensa y estrategias inmersivas.</h5>
-                    <p class="card-text"><small class="text-white">Lectura de 3 minutos</small></p>
-                </div>
-            </div>
+            <div id="eegPlotBack" style="width:100%;height:50%;"></div>
+            <div id="eegPlotTask" style="width:100%;height:50%;"></div>
         </div>
-        <!-- Columna de tarjetas más pequeñas a la derecha -->
-        <div class="col-md-4">
-            <div class="card bg-primary text-white mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">FC24: lleva el fervor del fútbol a tu pantalla con realismo inigualable.</h5>
-                    <p class="card-text"><small class="text-white">Lectura de 3 minutos</small></p>
-                </div>
-            </div>
-            <div class="card bg-primary text-white mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Warframe: una odisea futurista que te sumerge en un combate frenético.</h5>
-                    <p class="card-text"><small class="text-white">Lectura de 3 minutos</small></p>
-                </div>
-            </div>
-            <div class="card bg-primary text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Valorant: combina habilidad pura con estrategia en equipo.</h5>
-                    <p class="card-text"><small class="text-white">Lectura de 3 minutos</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
-@*     <p class="text-muted">Esta plataforma es tu destino digital para organizar y descubrir tus próximas aventuras de juego, ofreciendo un espacio personalizado para planificar tu escape a mundos nuevos y emocionantes.</p>
-    <p class="text-muted"><strong>200k de usuarios se han unido!</strong></p> *@
-</div>
-
-
-
-<div class="container mt-5">
-    <h2 class="mb-4">Listas de Juegos</h2>
-    <div id="listCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Los elementos del carrusel se insertarán aquí mediante JavaScript -->
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#listCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#listCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
     </div>
 </div>

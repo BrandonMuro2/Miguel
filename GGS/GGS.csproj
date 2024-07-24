@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Modules\**" />
+    <Content Remove="wwwroot\Modules\**" />
+    <EmbeddedResource Remove="wwwroot\Modules\**" />
+    <None Remove="wwwroot\Modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EDF-CSharp" Version="0.6.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
@@ -14,9 +22,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SharpEDFlib" Version="1.26.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\lib\block-ui\" />
   </ItemGroup>

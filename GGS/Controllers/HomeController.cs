@@ -2,7 +2,7 @@ using GGS.Models;
 using GGS.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WebApp.Models;
+using System.Formats.Tar;
 
 namespace GGS.Controllers
 {
@@ -33,12 +33,12 @@ namespace GGS.Controllers
         }
 
 
-        [HttpPost]
-        public IActionResult GetList(int UsId)
+        [HttpGet]
+        public IActionResult GetSignalsBySubject(int subjectId, int channelId, string type)
         {
             try
             {
-                var lists = _homeService.GetList(UsId);
+                var lists = _homeService.GetSignalsBySubject(subjectId, channelId, type);
                 return Result.FromData(Response, lists);
             }
             catch (Exception ex)
@@ -47,18 +47,62 @@ namespace GGS.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult GetGames()
+        [HttpGet]
+        public IActionResult GetSubjects()
         {
             try
             {
-                var games = _homeService.GetGames();
-                return Result.FromData(Response, games);
+                var lists = _homeService.GetSubjects();
+                return Result.FromData(Response, lists);
             }
             catch (Exception ex)
             {
                 return Result.FromException(Response, ex);
             }
         }
+
+        [HttpGet]
+        public IActionResult GetChannels()
+        {
+            try
+            {
+                var lists = _homeService.GetChannels();
+                return Result.FromData(Response, lists);
+            }
+            catch (Exception ex)
+            {
+                return Result.FromException(Response, ex);
+            }
+        }
+        [HttpGet]
+        public IActionResult GetActivityByChannels(string channelNames)
+        {
+            try
+            {
+                var lists = _homeService.GetActivityByChannels(channelNames);
+                return Result.FromData(Response, lists);
+            }
+            catch (Exception ex)
+            {
+                return Result.FromException(Response, ex);
+            }
+        }
+
+        //[HttpPost]
+        //public IActionResult InsertBackgroundAndTask(IFormFile backgroundfile, IFormFile taskfile)
+        //{
+        //    try
+        //    {
+        //        _homeService.InsertBackgroundAndTask(backgroundfile, taskfile);
+        //        return Result.FromCreated(Response);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Result.FromException(Response, ex);
+        //    }
+        //}
+
+
+
     }
 }
