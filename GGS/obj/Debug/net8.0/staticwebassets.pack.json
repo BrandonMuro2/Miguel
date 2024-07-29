@@ -13,12 +13,28 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\GGS\\GGS\\wwwroot\\img\\calc.jpg",
+      "PackagePath": "staticwebassets\\img\\calc.jpg"
+    },
+    {
+      "Id": "C:\\GGS\\GGS\\wwwroot\\img\\eeg.png",
+      "PackagePath": "staticwebassets\\img\\eeg.png"
+    },
+    {
       "Id": "C:\\GGS\\GGS\\wwwroot\\img\\fondoperron.png",
       "PackagePath": "staticwebassets\\img\\fondoperron.png"
     },
     {
       "Id": "C:\\GGS\\GGS\\wwwroot\\img\\ggs.png",
       "PackagePath": "staticwebassets\\img\\ggs.png"
+    },
+    {
+      "Id": "C:\\GGS\\GGS\\wwwroot\\img\\lobulos.jpg",
+      "PackagePath": "staticwebassets\\img\\lobulos.jpg"
+    },
+    {
+      "Id": "C:\\GGS\\GGS\\wwwroot\\img\\matematical.jpg",
+      "PackagePath": "staticwebassets\\img\\matematical.jpg"
     },
     {
       "Id": "C:\\GGS\\GGS\\wwwroot\\js\\controller.js",

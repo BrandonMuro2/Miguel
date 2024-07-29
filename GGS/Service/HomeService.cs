@@ -36,7 +36,7 @@ namespace GGS.Service
             SELECT * FROM (
             SELECT *, ROW_NUMBER() OVER (ORDER BY TimeIndex) as RowNum FROM MuestrasDeSeñales
             WHERE SessionId = {0} AND ChannelId = {1} AND TimeIndex < 30000) AS SampledData
-            WHERE RowNum % 10 = 1
+            WHERE RowNum % 20 = 1
             ORDER BY TimeIndex";
 
             var muestras = _context.MuestrasDeSeñales

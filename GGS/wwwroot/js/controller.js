@@ -210,7 +210,7 @@ const getEEGBySubjectChannel = async (channelId) => {
 
 const processAndPlotData = (data, plot,title, lineColor) => {
     const originalSampleFrequency = 500; // Frecuencia de muestreo original en Hz
-    const downSampleFactor = 10; // Factor de muestreo (reducción a 10 Hz)
+    const downSampleFactor = 20; // Factor de muestreo (reducción a 10 Hz)
     const sampleFrequency = originalSampleFrequency / downSampleFactor; // Nueva frecuencia de muestreo en Hz
 
     // Convertir índices de tiempo a segundos basados en la frecuencia original
@@ -256,10 +256,10 @@ function ShowLoading() {
             `<div class="card border border-0 my-3 py-3" style="background-color: #333; color: #fff;">
                 <div class="text-center mb-2">
                     <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
-                        <span class="visually-hidden">Cargando...</span>
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
-                <h6 class="card-text fw-bold">Cargando contenido, por favor espere...</h6>
+                <h6 class="card-text fw-bold">Loading content, please wait...</h6>
             </div>`,
         css: {
             border: 'none',

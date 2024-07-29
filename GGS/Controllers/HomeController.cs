@@ -25,6 +25,14 @@ namespace GGS.Controllers
         }
 
 
+        public IActionResult Landing()
+        {
+            return View();
+        }
+        public IActionResult References()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
